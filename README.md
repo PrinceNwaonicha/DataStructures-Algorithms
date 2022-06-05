@@ -1,2 +1,2 @@
 # DataStructures-Algorithms
-DataStructures &amp; Algorithms Course.
+DataStructures &amp; Algorithms.
