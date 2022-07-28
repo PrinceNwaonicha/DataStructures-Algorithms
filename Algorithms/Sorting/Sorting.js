@@ -94,3 +94,53 @@ function insertionSort(array) {
 
 insertionSort(numbers);
 console.log(numbers);
+
+
+
+//MergeSort algorithm
+function mergeSort (array) {
+  if (array.length === 1){
+    return array
+  }
+  // To split in half we need to figure out the middle
+  const middle = Math.floor(array.length / 2)
+  
+  // Split Array in into right and left
+  const left = array.slice(0,middle)
+
+  const right = array.slice(middle)
+  
+
+  
+  return merge(
+    mergeSort(left),
+    mergeSort(right)
+  )
+}
+
+// merge the left and right arrays
+function merge(left, right){
+  // create initial result array and index pointers for left and right index
+  let result = [], leftIndex = 0, rightIndex = 0
+
+  //concatenate values together while comparing the left index to right
+  //and put them in the result in order
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++ // move left array pointer
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++; // move right array pointer
+    }
+  }
+
+  //At the end we need to concat here because there will be one element remaining
+  //either from the left or the right
+  return result
+    .concat(left.slice(leftIndex))
+    .concat(right.slice(rightIndex));
+}
+
+const answer = mergeSort(numbers);
+console.log(answer);
