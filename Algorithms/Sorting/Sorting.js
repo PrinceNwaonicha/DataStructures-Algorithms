@@ -144,3 +144,44 @@ function merge(left, right){
 
 const answer = mergeSort(numbers);
 console.log(answer);
+
+//QuickSort Algorithm
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+
+function quickSort(array, left, right){
+if (left < right) {
+  const index = partition(array, left, right);
+  quickSort(array, left, index - 1);
+  quickSort(array, index, right);
+}
+}
+
+function partition(array, left, right) {
+    //Pivot will be in the middle since picking the first or last index
+  //could result in an O^2 time complexity.
+  let pivot = Math.floor((left+right) / 2);
+  let pivotVal = array[pivot];
+
+  //loop until the left index is more than the right index
+  while (left <= right) {
+    while (array[left] < pivotVal) {
+      left++;
+    }
+    while (array[right] > pivotVal) {
+      right--;
+    }
+    if (left <= right) {
+      // swap
+      let temp = array[left];
+      array[left] = array[right];
+      array[right] = temp;
+
+      left++;
+      right--;
+    }
+  }
+  return left;
+}
+//Select first and last index as 2nd and 3rd parameters
+quickSort(numbers, 0, numbers.length - 1);
+console.log(numbers);
