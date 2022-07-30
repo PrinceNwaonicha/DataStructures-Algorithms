@@ -146,7 +146,6 @@ const answer = mergeSort(numbers);
 console.log(answer);
 
 //QuickSort Algorithm
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function quickSort(array, left, right){
 if (left < right) {
@@ -185,3 +184,30 @@ function partition(array, left, right) {
 //Select first and last index as 2nd and 3rd parameters
 quickSort(numbers, 0, numbers.length - 1);
 console.log(numbers);
+
+//Exercise to determine Best sorting algorithm based off of situation
+
+//#1 - Sort 10 schools around your house by distance:
+//Insertion sort
+
+//#2 - eBay sorts listings by the current Bid amount:
+//radix or counting sort because these are numbers that are of a fixed length
+
+//#3 - Sport scores on ESPN
+//Quick Sort
+
+//#4 - Massive database (can't fit all into memory) needs to sort through past year's user data
+//Merge Sort 
+
+//#5 - Almost sorted Udemy review data needs to update and add 2 new reviews
+//insertion sort
+
+//#6 - Temperature Records for the past 50 years in Canada
+//If they have no decimal places then you are probably going to use 
+//radix or counting sort or if they do then probably Quick sort.
+
+//#7 - Large user name database needs to be sorted. Data is very random.
+//quicksort if memory is not an issue.
+
+//#8 - You want to teach sorting for the first time
+//bubble sort or selection sort
