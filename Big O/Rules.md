@@ -40,7 +40,3 @@ function printFirstItemThenFirstHalfTehnSayHi100Times(items) {
 
 Even though the above is O(n/2 + 101). We dont care about the constants so it becomes O(n) because as it scales and approaches "Infinity".
 <br>We dont care how steep the line is during interviews just how the line is moving.
-
-<img src="./Images/2-24.png" alt="Big O complexity chart">
-
-<br>
